@@ -1,11 +1,39 @@
 
-export const formatDate = ( dateStr ) => {
-    const dateObj = new Date(dateStr);
+export const formatDate = ( date ) => {
+    const dateObj = new Date(date);
     return dateObj.getDate() + "-" + getMonthShortName(dateObj.getMonth()) + "-" + dateObj.getFullYear();
 }
 
-export const formatNumber = ( numberStr ) => {
-    return Number(Math.round(numberStr+'e2')+'e-2');
+export const formatDateTime = ( date ) => {
+    const dateObj = new Date(date);
+    let hours = dateObj.getHours();
+    let minutes = dateObj.getMinutes();
+    let ampm = '';
+    let time = "";
+
+    if ( hours >= 12 ) {
+        ampm = 'pm';
+
+    } else {
+        ampm = 'am';
+    }
+
+    hours = hours % 12;
+    if ( hours == 0 ) {
+        hours = 12;
+    }
+
+    if ( minutes < 10 ) {
+        minutes = '0' + minutes;
+    }
+
+    time = hours + ':' + minutes + ' ' + ampm;
+
+    return formatDate(date) + " @ " + time;
+}
+
+export const formatNumber = ( number ) => {
+    return Number(Math.round(number+'e2')+'e-2');
 }
 
 export const getMonthShortName = ( monthNumber ) => {

@@ -5,6 +5,7 @@ const initialState = {
     status: {},
     data: [],
     fetchingCryptos: true,
+    refreshDate: new Date(),
 }
 
 const reducer = ( state=initialState, action ) => {

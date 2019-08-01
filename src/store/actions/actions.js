@@ -4,7 +4,7 @@ import { apiFetchCryptos } from '../../api/calls';
 export const fetchCryptos = ( cryptos ) => {
     return {
         type: actionTypes.FETCH_CRYPTOS,
-        cryptos: cryptos,
+        cryptos: cryptos
     }
 }
 

@@ -3,5 +3,6 @@ export const updateState = ( state, action ) => {
         ...state,
         ...action.cryptos,
         fetchingCryptos: false,
+        refreshDate: new Date(),
     }
 }
