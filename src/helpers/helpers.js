@@ -9,14 +9,14 @@ export const formatDateTime = ( date ) => {
     let hours = dateObj.getHours();
     let minutes = dateObj.getMinutes();
     let seconds = dateObj.getSeconds();
+    let time = '';
     let ampm = '';
-    let time = "";
 
     if ( hours >= 12 ) {
-        ampm = 'pm';
+        ampm = 'PM';
 
     } else {
-        ampm = 'am';
+        ampm = 'AM';
     }
 
     hours = hours % 12;

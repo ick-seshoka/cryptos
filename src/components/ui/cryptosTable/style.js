@@ -73,4 +73,10 @@ export const TableColumn = styled.p`
             color: #2196F3;
         `
     }
+
+    ${
+        props => props.bold && css`
+            font-weight: 700;
+        `
+    }
 `

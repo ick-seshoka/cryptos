@@ -9,7 +9,7 @@ const cryptosTable = ( props ) => {
         return (
             <TableRow key={ crypto.id }>
                 <TableColumn tinyWidth>{ crypto.cmc_rank }</TableColumn>
-                <TableColumn smallWidth>{ crypto.name }</TableColumn>
+                <TableColumn smallWidth bold>{ crypto.name }</TableColumn>
                 <TableColumn smallWidth>{ crypto.symbol }</TableColumn>
                 <TableColumn smallWidth colorBlue>
                     <NumberFormat 

@@ -16,7 +16,7 @@ export const LoaderProgress = styled.div`
     border-radius: 1.5em;
     background-color: #FA6400;
     animation-name: stretch;
-    animation-duration: 5s;
+    animation-duration: 3s;
     animation-iteration-count: 1;
     animation-timing-function: ease-in;
 

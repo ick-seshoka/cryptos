@@ -28,7 +28,7 @@ export const CryptoCount = styled.p`
     text-align: right;
     margin-bottom: 0.5em;
     margin-right: 3em;
-    font-size: 1.3625em;
+    font-size: 1.2325em;
     color: #424242;
     font-weight: 700;
 `
