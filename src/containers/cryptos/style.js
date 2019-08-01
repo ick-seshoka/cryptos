@@ -22,6 +22,14 @@ export const Container = styled.div`
             text-align: center;
         `
     }
+
+    ${
+        props => props.error && css`
+            height: 585px;
+            line-height: 585px;
+            text-align: center;
+        `
+    }
 `
 
 export const CryptoCount = styled.p`

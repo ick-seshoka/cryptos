@@ -7,6 +7,7 @@ import Header from '../../components/ui/header';
 import Footer from '../../components/ui/footer';
 import CryptosTable from '../../components/ui/cryptosTable';
 import Spinner from '../../components/ui/spninner';
+import Error from '../../components/ui/error';
 import { Container, CryptoCount, RefreshStatus } from './style';
 
 class Cryptos extends Component {
@@ -29,7 +30,7 @@ class Cryptos extends Component {
             </Container>
         );
 
-        if ( !this.props.fetchingCryptos ) {
+        if ( !this.props.fetchingCryptos && this.props.status.error == 0 ) {
             content = (
                 <Fragment>
                     <Container>
@@ -40,6 +41,13 @@ class Cryptos extends Component {
                         <CryptosTable cryptosData={ this.props.cryptos } />
                     </Container>
                 </Fragment>
+            );
+
+        } else {
+            content = (
+                <Container error>
+                    <Error message={ this.props.status.error_message } />
+                </Container>
             );
         }
 
@@ -55,6 +63,7 @@ class Cryptos extends Component {
 
 const mapStateToProps = state => {
     return {
+        status: state.status,
         cryptos: state.data,
         fetchingCryptos: state.fetchingCryptos,
         refreshDate: state.refreshDate,
