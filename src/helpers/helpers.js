@@ -5,8 +5,7 @@ export const formatDate = ( dateStr ) => {
 }
 
 export const formatNumber = ( numberStr ) => {
-    let number = parseInt(numberStr);
-    return number.toFixed(2);
+    return Number(Math.round(numberStr+'e2')+'e-2');
 }
 
 export const getMonthShortName = ( monthNumber ) => {

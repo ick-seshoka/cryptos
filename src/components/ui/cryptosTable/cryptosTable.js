@@ -27,7 +27,7 @@ const cryptosTable = ( props ) => {
                         prefix={'$'} 
                     />
                 </TableColumn>
-                <TableColumn largeWidth>{ crypto.circulating_supply }</TableColumn>
+                <TableColumn largeWidth>{ formatNumber(crypto.circulating_supply) }</TableColumn>
                 <TableColumn smallWidth>{ formatDate(crypto.date_added) }</TableColumn>
             </TableRow>
         )
