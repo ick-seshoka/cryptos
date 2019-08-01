@@ -8,6 +8,7 @@ export const formatDateTime = ( date ) => {
     const dateObj = new Date(date);
     let hours = dateObj.getHours();
     let minutes = dateObj.getMinutes();
+    let seconds = dateObj.getSeconds();
     let ampm = '';
     let time = "";
 
@@ -27,7 +28,7 @@ export const formatDateTime = ( date ) => {
         minutes = '0' + minutes;
     }
 
-    time = hours + ':' + minutes + ' ' + ampm;
+    time = hours + ':' + minutes + ':' + seconds + ' ' + ampm;
 
     return formatDate(date) + " @ " + time;
 }
