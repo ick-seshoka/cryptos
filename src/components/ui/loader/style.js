@@ -11,10 +11,20 @@ export const LoaderWrap = styled.div`
 `
 
 export const LoaderProgress = styled.div`
-    width: ${ props=> props.progress + '%' };
+    width: 10%;
     height: 0.5em;
     border-radius: 1.5em;
     background-color: #FA6400;
+    animation-name: stretch;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+
+    @keyframes stretch {
+        10% { width: 10% }
+        50% { width: 50% }
+        100% { width: 100% }
+    }
 `
 
 export const LoaderText = styled.p`

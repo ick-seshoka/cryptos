@@ -1,0 +1,2 @@
+export const FETCH_CRYPTOS = "FETCH_CRYPTOS";
+export const REFRESH_CRYPTOS = "REFRESH_CRYPTOS";

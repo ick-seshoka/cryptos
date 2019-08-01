@@ -10,15 +10,22 @@ ${
 
 ${
     props => props.medium && css`
-    width: 4.25em;
-    height: 4.25em;
+        width: 4.25em;
+        height: 4.25em;
     `
 }
 
 ${
     props => props.small && css`
-    width: 2.25em;
-    height: 2.25em;
+        width: 2.25em;
+        height: 2.25em;
+    `
+}
+
+${ 
+    props => props.tiny && css`
+        width: 1.25em;
+        height: 1.25em;
     `
 }
 `

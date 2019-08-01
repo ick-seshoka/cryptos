@@ -1,0 +1,1 @@
+export { SERVER_NAME } from './constants';

@@ -1,10 +1,17 @@
 import React, { Component, Fragment } from 'react';
+import { withRouter } from 'react-router-dom';
 
 import LogoIcon from '../../components/ui/logoIcon';
 import Loader from '../../components/ui/loader';
 import { ImageWrap, LoadingWrap, Container, LogoText, LoaderStatus } from './style';
 
 class Home extends Component {
+    componentDidMount() {
+        setTimeout(() => {
+            this.props.history.push('/cryptos');
+        }, 5500);
+    }
+
     render() {
         return (
             <Fragment>
@@ -22,4 +29,4 @@ class Home extends Component {
     }
 }
 
-export default Home;
+export default withRouter(Home);
