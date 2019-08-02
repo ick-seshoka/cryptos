@@ -6,13 +6,7 @@ export const apiFetchCryptos = () => {
         url: '/listings/latest',
 
     }).then( response => {
-        console.log(response);
-        if ( response.data.status.error_code == 0 ) {
-            return response.data;
-
-        } else {
-            return response.data;
-        }
+        return response.data;
 
     }).catch( error => {
         return {
