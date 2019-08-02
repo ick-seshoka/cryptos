@@ -2,7 +2,7 @@ import { request } from '../request';
 
 export const apiFetchCryptos = () => {
     return request({
-        method: 'POST',
+        method: 'GET',
         url: '/listings/latest',
 
     }).then( response => {
