@@ -3,10 +3,9 @@ import * as actions from '../actions';
 import { apiFetchCryptos } from '../../api/calls';
 
 export function* getCryptos() {
-    let data = '';
-    yield apiFetchCryptos().then( response => {
-        data = response.data;
-    });
+    let data = yield apiFetchCryptos();
 
-    put(actions.fetchCryptos(data));
+    console.log(data);
+
+    yield put(actions.fetchCryptos(data));
 }
