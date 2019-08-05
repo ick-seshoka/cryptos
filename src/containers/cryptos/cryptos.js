@@ -30,7 +30,7 @@ class Cryptos extends Component {
             </Container>
         );
 
-        if ( !this.props.fetchingCryptos && this.props.status.error == 0 ) {
+        if ( !this.props.fetchingCryptos && this.props.status.error === 0 ) {
             content = (
                 <Fragment>
                     <Container>
@@ -72,7 +72,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        getCryptos: () => dispatch(actions.getCryptos()),
+        getCryptos: () => dispatch({type: actions.FETCH_CRYPTOS}),
     }
 }
 
