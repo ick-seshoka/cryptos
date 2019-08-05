@@ -5,4 +5,5 @@ export {
 
 export {
     getCryptos,
+    fetchCryptos,
 } from './actions';

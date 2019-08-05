@@ -5,16 +5,20 @@ import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import reducer from './store/reducer';
-import { logger } from './store/logger';
-import thunk from 'redux-thunk';
+// import { logger } from './store/logger';
+import { watchGetCryptos } from './store/sagas/rootSaga';
+// import thunk from 'redux-thunk';
+import createSagaMiddleware from 'redux-saga';
 
 import 'normalize.css';
 import "./index.scss";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css';
 
+const sagaMiddleware = createSagaMiddleware();
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(reducer, composeEnhancers(applyMiddleware(logger, thunk)));
+const store = createStore(reducer, composeEnhancers(applyMiddleware(sagaMiddleware)));
+sagaMiddleware.run(watchGetCryptos);
 
 const AppWrap = (
     <Provider store={ store }>
